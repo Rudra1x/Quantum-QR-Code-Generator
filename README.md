@@ -4,8 +4,7 @@ A command-line project for generating and decoding **Post-Quantum Secure (PQC)**
 
 This system demonstrates how to combine **true quantum randomness (QRNG)** with **quantum-resistant cryptography (PQC)** to create a "hybrid-encryption" system for ultra-secure, offline data transfer.
 
-![Your Generated QR Code](quantum_qr.png)
-*(This README assumes you've run the generator and saved the output as `quantum_qr.png` in your repository)*
+![Generated QR Code]<img width="1450" height="1450" alt="image" src="https://github.com/user-attachments/assets/0ffda869-415a-4472-90e6-caf6001d3a9c" />
 
 ---
 
@@ -85,33 +84,4 @@ The result is a QR code that is meaningless to anyone who scans it, but can be i
 
 ### ## ⚙️ How to Use
 
-This project runs in three simple steps. Save the code blocks below as separate Python files.
-
-#### Step 1: Generate Receiver Keys (One-Time Setup)
-
-The **Receiver (Bob)** runs this script *once* to create his PQC key pair.
-
-**`01_generate_receiver_keys.py`**
-```python
-from pqc.kem import kyber768
-import binascii
-
-print("Generating PQC key pair (Kyber-768) for the receiver...")
-
-try:
-    public_key, secret_key = kyber768.keypair()
-
-    # Save keys to files
-    with open("receiver.pub", "wb") as f:
-        f.write(public_key)
-        
-    with open("receiver.key", "wb") as f:
-        f.write(secret_key)
-        
-    print("\n Success! Keys saved:")
-    print(f"  > Public Key: receiver.pub ({len(public_key)} bytes)")
-    print(f"  > Secret Key: receiver.key ({len(secret_key)} bytes)")
-    print("\nGive 'receiver.pub' to the Sender. Keep 'receiver.key' safe!")
-
-except Exception as e:
-    print(f"An error occurred: {e}")
+This project runs in three simple steps. Save the code blocks as separate Python files.
